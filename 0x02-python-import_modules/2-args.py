@@ -1,15 +1,12 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) == 1:
-        print('{:d} arguments.'.format(0))
+    count = len(sys.argv) - 1
+    if count == 0:
+        print('0 arguments.')
+    elif count == 1:
+        print('1 argument:')
     else:
-        my_list = list(sys.argv)
-        my_list.remove(sys.argv[0])
-        if len(my_list) == 1:
-            print('{:d} argument:'.format(1))
-            print('{:d}: {}'.format(1, my_list[0]))
-        else:
-            print('{:d} arguments:'.format(len(sys.argv) - 1))
-            for i, arg in enumerate(my_list, start=1):
-                print('{}: {}'.format(i, arg))
+        print('{:d} arguments:'.format(count))
+    for i in range(count):
+        print('{:d: {}'.format(i + 1, sys.argv[i + 1]))
