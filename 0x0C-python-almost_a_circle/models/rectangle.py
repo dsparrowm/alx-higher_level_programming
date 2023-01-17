@@ -8,7 +8,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """This class is a subclass of Base class"""
-    def  __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
         self.height = height
@@ -73,7 +73,11 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of Rectangle"""
-        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height, 'x': self.x,
+                'y': self.y}
 
     def area(self):
         """calculates the area of the rectangle"""
@@ -92,7 +96,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """overide the string representation of an object"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
 
     def display(self):
         """displays the rectangle"""
@@ -104,7 +109,7 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
-    
+
     def update(self, *args, **kwargs):
         """updaates rectangle
         args:
