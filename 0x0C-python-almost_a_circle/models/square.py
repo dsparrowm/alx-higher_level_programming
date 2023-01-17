@@ -32,7 +32,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """returns the string representation of square attributes"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """updates the square class"""
