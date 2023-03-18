@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-a python file that contains the class definition of a State
-and an instance Base = declarative_base():
+"""Defines a module ``model_state`` that contains
+   ``State`` class.
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -10,9 +9,11 @@ Base = declarative_base()
 
 
 class State(Base):
+    """Defines the class ``State`` that inherit from ``Base``.
+    Attributes:
+    id: class Attribute, primary key
+    name: class attribute string of 128 characters
     """
-        Class that links to the states table
-    """
-    __table__name = 'states'
-    id = Column(Integer, Primary_Key=True)
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
